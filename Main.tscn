@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://rkdnhqgf2hpj" path="res://Mob.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://4vwrqjegqwpj" path="res://Player.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ccqoreueuxdb7" path="res://HUD.tscn" id="4"]
-[ext_resource type="AudioStream" uid="uid://bpahsmgrg3ylg" path="res://pacman-dies.mp3" id="5_6mftn"]
-[ext_resource type="AudioStream" uid="uid://b1a4oj6k2ynm3" path="res://pacman-song.mp3" id="6_ot2m6"]
+[ext_resource type="AudioStream" uid="uid://b1a4oj6k2ynm3" path="res://Sounds/pacman-song.mp3" id="5_u22hy"]
+[ext_resource type="AudioStream" uid="uid://bpahsmgrg3ylg" path="res://Sounds/pacman-dies.mp3" id="6_gflam"]
 
 [sub_resource type="Curve2D" id="1"]
 _data = {
@@ -47,10 +47,10 @@ curve = SubResource("1")
 [node name="HUD" parent="." instance=ExtResource("4")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_ot2m6")
+stream = ExtResource("5_u22hy")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_6mftn")
+stream = ExtResource("6_gflam")
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
